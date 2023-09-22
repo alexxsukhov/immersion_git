@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block seo_title %}Главная страница{% endblock %}
-{% block seo_description %}Главная страница{% endblock %}
-{% block seo_keywords %}Главная страница{% endblock %}
+{% block seo_title %}{{ index_info.seo_title }}{% endblock %}
+{% block seo_description %}{{ index_info.seo_description }}{% endblock %}
+{% block seo_keywords %}{{ index_info.seo_keywords }}{% endblock %}
 
 
 
@@ -31,42 +31,8 @@
     <section class="main__page">
         <div class="container">
             <div class="content">
-                <section>
-                    <h1>Добро пожаловать на сайт "Кодеры Гениальности"</h1>
-                    <p>Место, где искусство программирования вдохновляет и создает будущее</p>
-                </section>
-
-                <section>
-                    <h2>О нас</h2>
-                    <p>Мы - творческая команда, которая объединена общей страстью к коду и инновациям. Наша миссия -
-                        превратить идеи
-                        в реальность, создавая удивительные программные решения.</p>
-                </section>
-
-                <section>
-                    <h2>Наши услуги</h2>
-                    <ul>
-                        <li>Разработка веб-приложений</li>
-                        <li>Мобильное приложение для всех платформ</li>
-                        <li>Индивидуальные консультации и поддержка проектов</li>
-                        <li>Серии мастер-классов и обучение</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Наши проекты</h2>
-                    <p>Мы гордимся нашими творческими достижениями. Посетите нашу галерею проектов, чтобы увидеть, как
-                        мы превращаем
-                        идеи в реальность.</p>
-                </section>
-
-                <section>
-                    <h2>Свяжитесь с нами</h2>
-                    <p>Давайте начнем разговор о вашем следующем проекте. Мы готовы принимать вызовы и превращать их в
-                        инновационные
-                        решения.</p>
-                    <p>Наш контактный email: info@codersgenius.com</p>
-                </section>
+                <h1>{% if index_info.h1 %}{{ index_info.h1 }}{% else %}{{ index_info.name }}{% endif %}</h1>
+                {{ index_info.description|safe }}
             </div>
         </div>
     </section>
