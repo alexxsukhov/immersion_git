@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block seo_title %}Статьи{% endblock %}
+{% block seo_description %}Статьи{% endblock %}
+{% block seo_keywords %}Статьи{% endblock %}
+{% block content %}
+    <section class="main__content">
+        <div class="container">
+            <h1>Статьи</h1>
+            <div class="articles__list">
+                <div class="row">
+                    {% for article in articles %}
+                        <div class="col-md-3">
+                            <div class="item">
+                                {% if article.image.url %}
+                                    <div class="img"><img src="{{ article.image.url }}" alt="{{ article.name }}"></div>
+                                {% endif %}
+                                <div class="title"><a
+                                        href="{% url 'blog_detail' slug=article.slug %}">{{ article.name }}</a></div>
+                                <div class="announce">{{ article.announce }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
