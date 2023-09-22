@@ -9,4 +9,5 @@ def index(request):
 
 
 def about(request):
-    return render(request, template_name="about.html")
+    about_info = StaticPage.objects.get(id=2)
+    return render(request, template_name="about.html", context={"about_info": about_info})
