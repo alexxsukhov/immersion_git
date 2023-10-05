@@ -16,12 +16,34 @@
                                 {% endif %}
                                 <div class="title"><a
                                         href="{% url 'blog_detail' slug=article.slug %}">{{ article.name }}</a></div>
+                                <div class="date">{{ article.date }}</div>
                                 <div class="announce">{{ article.announce }}</div>
                             </div>
                         </div>
                     {% endfor %}
                 </div>
+                {% if end_page >= 2 and show_all != "Y" %}
+                    <nav class="">
+                        <ul class="pagination">
+
+                            <li class="page-item"><a class="page-link" href="{% url 'blog_index' %}"><<</a></li>
+                            {% for i in range_pages %}
+                                {% if i == current_page %}
+                                    <li class="page-item active"><span class="page-link"
+                                                                       data-href="{% url 'blog_index' %}?page={{ i }}">{{ i }}</span>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link"
+                                                             href="{% url 'blog_index' %}?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            <li class="page-item"><a class="page-link"
+                                                     href="{% url 'blog_index' %}?page={{ end_page }}">>></a></li>
+                            <li class="page-item"><a class="page-link" href="{% url 'blog_index' %}?show_all=Y">Показать
+                                все</a></li>
+                        </ul>
+                    </nav>
+                {% endif %}
             </div>
-        </div>
     </section>
 {% endblock %}
