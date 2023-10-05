@@ -9,17 +9,17 @@
             <div class="content">
                 <div class="article__detail">
                     <div class="row">
-                        <!--div class="col-md-4">
+                        <div class="col-md-4">
                             <div class="image"><img src="{{ article.image.url }}" alt="{{ article.name }}"/></div>
-                        </div-->
-                        <div class="col-md-12">
+                        </div>
+                        <div class="col-md-8">
                             <div class="content__article">
                                 <h1>{% if article.h1 %}{{ article.h1 }}{% else %}{{ article.name }}{% endif %}</h1>
-                                <div class="content">
-                                    {{ article.description|safe }}
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="content">
+                        {{ article.description|safe }}
                     </div>
                 </div>
             </div>

@@ -1,34 +1,42 @@
 body {
     padding: 10px;
 }
+
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
     color: #011627;
     font-weight: bold;
 }
+
 h1 {
     font-size: 30px;
 }
+
 h2 {
     font-size: 25px;
 }
+
 img {
     max-width: 100%;
 }
+
 .bold {
     font-weight: bold;
 }
+
 img.icon {
     width: 25px;
     margin-right: 5px;
 }
+
 header {
-    background: #010E1A;
+    background: rgba(1, 14, 26, 0.9);;
     border-radius: 30px;
     padding: 5px 0px;
 }
+
 footer {
-    background: #010E1A;
+    background: rgba(1, 14, 26, 0.9);;
     border-radius: 30px;
     padding: 15px 0;
     color: #fff;
@@ -43,39 +51,64 @@ header .logo a {
     text-decoration: none;
     font-size: 25px;
 }
+
 .main__content {
     padding: 50px 0px;
     background: #eee;
     border-radius: 30px;
-    margin: 15px 0px;
+    margin: 15px 0;
 }
+
 .articles__list .item {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     padding: 15px;
     border-radius: 15px;
     background: #fff;
+    margin-bottom: 30px;
 }
+
 .articles__list .item .img {
     margin-bottom: 15px;
 }
+
 .articles__list .item .img img {
     max-width: 100%;
     border-radius: 15px;
 }
+
 .articles__list .item .title {
     margin-bottom: 15px;
 }
+
 .articles__list .item .title a {
     font-size: 20px;
     text-decoration: none;
     color: #011627;
 }
+
+.articles__list .item .date {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #011627;
+}
+
 .article__detail .image img {
     max-width: 100%;
     border-radius: 15px;
 }
+
 .main__slider {
     border-radius: 30px;
     margin: 15px 0;
     overflow: hidden;
+}
+
+.page-item .page-link {
+    color: #011627;
+}
+
+.page-item.active .page-link {
+    background: rgba(1, 22, 39, 0.9);;
+    border-color: #011627;
+    font-weight: bold;
 }

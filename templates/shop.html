@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="main__content">
+        <div class="container">
+            <div class="row">
+                {% for category in categories %}
+                    <div class="col-md-3">
+                        <div class="item">
+                            <div class="image"></div>
+                            <div class="title"><a
+                                    href="{% url "detail_category" slug=category.slug %}">{{ category.name }}</a></div>
+                            <div class="announce">{{ category.announce }}</div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
