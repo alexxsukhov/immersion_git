@@ -52,9 +52,13 @@ header .logo a {
     font-size: 25px;
 }
 
+header .navbar a {
+    padding: 0 15px;
+}
+
 .main__content {
-    padding: 50px 0px;
-    background: #eee;
+    padding: 50px 0;
+    background: #f5f5f5;
     border-radius: 30px;
     margin: 15px 0;
 }
@@ -111,4 +115,98 @@ header .logo a {
     background: rgba(1, 22, 39, 0.9);;
     border-color: #011627;
     font-weight: bold;
+}
+
+.top__text {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(1, 14, 26, 0.9);
+}
+
+.product__list {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(1, 14, 26, 0.9);
+}
+
+.product__list .item {
+    box-shadow: 0 0 15px rgba(1, 14, 26, 0.4);
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: #fff;
+}
+
+.product__list .item .title a {
+    display: block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: rgba(1, 14, 26, 1);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product__list .item .image {
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.product__list .item .price__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__list .item .price__block .price {
+    font-weight: bold;
+    color: #006b1b;
+    font-size: 20px;
+}
+
+.product__list .item .price__block .button {
+    text-align: center;
+    padding: 10px 30px;
+    color: #eee;
+    text-transform: uppercase;
+    background: rgba(1, 14, 26, 0.9);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.product__detail .content {
+    margin-top: 50px;
+}
+
+.product__detail .content .tab-content {
+    margin: 30px 0;
+}
+
+.product__detail .top__block .price__block {
+    margin-top: 30px;
+    display: flex;
+}
+
+.product__detail .top__block .price__block .price {
+    font-weight: bold;
+    font-size: 25px;
+    color: rgba(1, 14, 26, 1);
+    margin-right: 25px;
+}
+
+.product__detail .top__block .price__block .button {
+    text-align: center;
+    padding: 10px 30px;
+    color: #eee;
+    text-transform: uppercase;
+    background: rgba(1, 14, 26, 0.9);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.product__detail .top__block .announce {
+    margin-top: 30px;
+}
+.product__detail .image {
+    border-radius: 30px;
+    overflow: hidden;
 }

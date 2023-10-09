@@ -1,25 +1,63 @@
 {% extends 'base.html' %}
-{% block seo_title %}{{ article.seo_title }}{% endblock %}
-{% block seo_description %}{{ article.seo_description }}{% endblock %}
-{% block seo_keywords %}{{ article.seo_keywords }}{% endblock %}
+{% block seo_title %}{{ product.seo_title }}{% endblock %}
+{% block seo_description %}{{ product.seo_description }}{% endblock %}
+{% block seo_keywords %}{{ product.seo_keywords }}{% endblock %}
 
 {% block content %}
     <section class="main__content">
         <div class="container">
             <div class="content">
-                <div class="article__detail">
+
+                <div class="product__detail">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="image"><img src="{{ article.image.url }}" alt="{{ article.name }}"/></div>
+                        <div class="col-md-5">
+                            <div class="image"><img src="{{ product.image.url }}" alt="{{ product.name }}"/></div>
                         </div>
-                        <div class="col-md-8">
-                            <div class="content__article">
-                                <h1>{% if article.h1 %}{{ article.h1 }}{% else %}{{ article.name }}{% endif %}</h1>
+                        <div class="col-md-7">
+                            <div class="top__block">
+                                <h1>{% if product.h1 %}{{ product.h1 }}{% else %}{{ product.name }}{% endif %}</h1>
+                                <div class="price__block">
+                                    <div class="price">{{ product.price }} ₽</div>
+                                    <div class="button">Купить</div>
+                                </div>
+                                <div class="announce">{{ product.announce|safe }}</div>
                             </div>
                         </div>
                     </div>
                     <div class="content">
-                        {{ article.description|safe }}
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#description" type="button" role="tab"
+                                        aria-controls="description"
+                                        aria-selected="true">Описание
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#characteristics"
+                                        type="button" role="tab" aria-controls="characteristics" aria-selected="false">
+                                    Характеристики
+                                </button>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="description" role="tabpanel"
+                                 aria-labelledby="home-tab">
+                                {{ product.description|safe }}
+                            </div>
+                            <div class="tab-pane fade" id="characteristics" role="tabpanel"
+                                 aria-labelledby="profile-tab">
+                                {% for item in product.characteristics %}
+                                    {% for key, value in item.items %}
+                                        <p>{{ key }}: {{ value }}</p>
+                                    {% endfor %}
+                                {% endfor %}
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
