@@ -13,15 +13,22 @@
 <header>
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="logo"><a href="{% url 'index' %}">AlexxS</a></div>
             </div>
             <div class="col-md-8">
-                <nav class="navbar">
+                <nav class="navbar align-items-center justify-content-start">
                     <a class="nav-item" href="{% url 'index' %}">Главная</a>
+                    <a class="nav-item" href="{% url 'index_shop' %}">Магазин</a>
                     <a class="nav-item" href="{% url 'about' %}">О нас</a>
                     <a class="nav-item" href="{% url 'blog_index' %}">Статьи</a>
                 </nav>
+            </div>
+            <div class="col-md-2">
+                <div class="user_links">
+                    <a class="auth__link" href="{#% url 'auth_form' %#}">Войти</a> /
+                    <a class="register__link" href="{#% url 'register_form' %#}">Регистрация</a>
+                </div>
             </div>
         </div>
     </div>

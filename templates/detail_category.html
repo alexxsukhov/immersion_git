@@ -16,8 +16,9 @@
                             <div class="item">
                                 <div class="image"></div>
                                 <div class="title"><a
-                                        href="{% url "detail_category" slug=category_item.slug %}">{{ category_item.name }}</a></div>
-                                <div class="announce">{{ category_item.announce }}</div>
+                                        href="{% url "detail_category" slug=category_item.slug %}">{{ category_item.name }}</a>
+                                </div>
+                                <div class="announce">{{ category_item.announce|safe }}</div>
                             </div>
                         </div>
 
@@ -29,10 +30,13 @@
                     {% for product in products %}
                         <div class="col-md-3">
                             <div class="item">
-                                <div class="image"></div>
+                                <div class="image"><img src="{{ product.image.url }}" alt="{{ product.name }}"></div>
                                 <div class="title"><a
                                         href="{% url "detail_product" slug=product.slug %}">{{ product.name }}</a></div>
-                                <div class="announce">{{ product.announce }}</div>
+                                <div class="price__block">
+                                    <div class="price">{{ product.price }} ₽</div>
+                                    <div class="button">Купить</div>
+                                </div>
                             </div>
                         </div>
 

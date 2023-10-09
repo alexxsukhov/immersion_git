@@ -10,7 +10,7 @@
                             <div class="image"></div>
                             <div class="title"><a
                                     href="{% url "detail_category" slug=category.slug %}">{{ category.name }}</a></div>
-                            <div class="announce">{{ category.announce }}</div>
+                            <div class="announce">{{ category.announce|safe }}</div>
                         </div>
                     </div>
 
