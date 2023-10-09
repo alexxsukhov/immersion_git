@@ -26,6 +26,11 @@ class Order(models.Model):
     total_amount = models.DecimalField(max_digits=10, decimal_places=2)
     order_date = models.DateField(auto_now_add=True)
 
+    def get_products(self):
+        return ", ".join(str(product) for product in self.products.all())
+
+    get_products.short_description = 'Товары'
+
     def __str__(self):
         return f"Order by {self.client.last_name} {self.client.first_name} on {self.order_date}"
 
