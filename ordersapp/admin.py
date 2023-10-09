@@ -9,4 +9,5 @@ class ClientAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('pk',)
+    list_display = ('pk', 'client', 'get_products')
+    list_filter = ('client',)
