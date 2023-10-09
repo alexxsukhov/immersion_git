@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block seo_title %}Страница редактирование товара{% endblock %}
+
+{% block content %}
+    <section class="main__content">
+        <div class="container">
+            <h1>Редактирование товара</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_div }}
+                <button type="submit">Сохранить изменения</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}
