@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 
 from ordersapp.models import Order, Client
+from .forms import EditProduct
 from .models import Product, Category
 
 
@@ -25,3 +26,18 @@ def detail_category(request, slug):
                   context={"categories": categories,
                            "products": products,
                            "category": category})
+
+
+def edit_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+
+    if request.method == 'POST':
+        form = EditProduct(request.POST, instance=product)
+        if form.is_valid():
+            form.save()
+            return render(request, 'product_edit.html', {'form': form})
+
+    else:
+        form = EditProduct(instance=product)
+
+    return render(request, 'product_edit.html', {'form': form})
